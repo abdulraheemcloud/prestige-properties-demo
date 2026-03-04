@@ -1,340 +1,1074 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="RNS Digital pricing plans for local businesses. Basic website from ₹4,999. Growth Plan from ₹8,999. Transparent pricing, no hidden fees." />
-  <title>Pricing – RNS Digital</title>
-  <link rel="stylesheet" href="css/style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prestige Properties - Coimbatore Real Estate</title>
   <style>
-    .pricing-support-card {
-      background: var(--white);
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius-lg);
-      padding: 36px 40px;
-      max-width: 680px;
+    /* Complete CSS for all pages */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Inter', sans-serif;
+    }
+    
+    body {
+      background: #f8f9fa;
+    }
+    
+    /* Header */
+    .header {
+      background: #0a1f44;
+      color: white;
+      padding: 1rem 0;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .container {
+      max-width: 1200px;
       margin: 0 auto;
+      padding: 0 20px;
     }
-    .support-options { display: flex; gap: 16px; flex-wrap: wrap; margin-top: 20px; }
-    .support-option {
-      flex: 1; min-width: 200px;
-      background: var(--off-white);
-      border: 1.5px solid var(--border);
-      border-radius: var(--radius);
-      padding: 20px;
-      transition: var(--transition);
-    }
-    .support-option:hover { border-color: rgba(26,86,219,.25); }
-    .support-price { font-family: var(--font-display); font-size: 1.3rem; font-weight: 800; color: var(--navy); margin: 6px 0 4px; }
-    .support-option p { font-size: .82rem; }
-    .faq-list { display: flex; flex-direction: column; gap: 0; }
-    .faq-item {
-      border-bottom: 1px solid var(--border);
-      padding: 20px 0;
-    }
-    .faq-item:first-child { border-top: 1px solid var(--border); }
-    .faq-q {
-      font-family: var(--font-display);
-      font-size: .95rem;
-      font-weight: 600;
-      color: var(--navy);
-      cursor: pointer;
+    
+    .header-container {
       display: flex;
       justify-content: space-between;
       align-items: center;
     }
-    .faq-q svg { width: 16px; height: 16px; stroke: var(--text-muted); transition: var(--transition); flex-shrink: 0; }
-    .faq-a { font-size: .875rem; color: var(--text-muted); margin-top: 10px; display: none; }
-    .faq-item.open .faq-q svg { transform: rotate(45deg); }
-    .faq-item.open .faq-a { display: block; }
+    
+    .logo h2 {
+      color: white;
+    }
+    
+    .gold {
+      color: #d4af37;
+    }
+    
+    .nav-menu ul {
+      display: flex;
+      list-style: none;
+      gap: 2rem;
+    }
+    
+    .nav-menu a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+    }
+    
+    .nav-menu a:hover, .nav-menu a.active {
+      color: #d4af37;
+    }
+    
+    .header-actions {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    
+    .call-btn {
+      color: white;
+      text-decoration: none;
+      background: #d4af37;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+    }
+    
+    .whatsapp-header {
+      color: #25D366;
+      font-size: 1.5rem;
+    }
+    
+    .mobile-toggle {
+      display: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+    }
+    
+    /* Hero Section */
+    .hero {
+      min-height: 500px;
+      display: flex;
+      align-items: center;
+      text-align: center;
+      color: white;
+    }
+    
+    .hero h1 {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+    }
+    
+    .hero-buttons {
+      margin-top: 2rem;
+    }
+    
+    .btn {
+      padding: 1rem 2rem;
+      text-decoration: none;
+      border-radius: 5px;
+      font-weight: 600;
+      margin: 0 0.5rem;
+      display: inline-block;
+      border: none;
+      cursor: pointer;
+    }
+    
+    .btn-primary {
+      background: #0a1f44;
+      color: white;
+    }
+    
+    .btn-outline {
+      border: 2px solid white;
+      color: white;
+      background: transparent;
+    }
+    
+    /* Search Section */
+    .search-section {
+      background: white;
+      padding: 2rem 0;
+      box-shadow: 0 -5px 15px rgba(0,0,0,0.1);
+    }
+    
+    .search-form {
+      display: flex;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+    
+    .search-form input, .search-form select, .search-form button {
+      flex: 1;
+      padding: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+      min-width: 200px;
+    }
+    
+    /* Property Grid */
+    .section-title {
+      text-align: center;
+      font-size: 2.5rem;
+      margin: 3rem 0;
+    }
+    
+    .property-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 2rem 0;
+    }
+    
+    .property-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    
+    .property-card img {
+      width: 100%;
+      height: 250px;
+      object-fit: cover;
+    }
+    
+    .property-info {
+      padding: 1.5rem;
+    }
+    
+    .price {
+      color: #d4af37;
+      font-size: 1.5rem;
+      font-weight: bold;
+      display: block;
+      margin-bottom: 0.5rem;
+    }
+    
+    .property-meta {
+      display: flex;
+      gap: 1rem;
+      margin: 1rem 0;
+    }
+    
+    /* Footer */
+    .footer {
+      background: #0a1f44;
+      color: white;
+      padding: 3rem 0 1rem;
+      margin-top: 3rem;
+    }
+    
+    .footer-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+    }
+    
+    .footer a {
+      color: white;
+      text-decoration: none;
+    }
+    
+    .social a {
+      font-size: 1.5rem;
+      margin-right: 1rem;
+    }
+    
+    .copyright {
+      text-align: center;
+      margin-top: 2rem;
+      padding-top: 1rem;
+      border-top: 1px solid #333;
+    }
+    
+    /* Floating Buttons */
+    .floating-buttons {
+      position: fixed;
+      bottom: 2rem;
+      right: 2rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      z-index: 999;
+    }
+    
+    .float-wa, .float-call {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 2rem;
+      color: white;
+      text-decoration: none;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+    }
+    
+    .float-wa {
+      background: #25D366;
+    }
+    
+    .float-call {
+      background: #0a1f44;
+    }
+    
+    /* Page Header */
+    .page-header {
+      padding: 4rem 0;
+      text-align: center;
+      color: white;
+    }
+    
+    .page-header h1 {
+      font-size: 3rem;
+    }
+    
+    /* Contact Page */
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      margin: 3rem 0;
+    }
+    
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+    
+    .contact-info {
+      background: #f4f4f4;
+      padding: 2rem;
+      border-radius: 10px;
+    }
+    
+    .info-item {
+      display: flex;
+      gap: 1rem;
+      margin: 2rem 0;
+      align-items: flex-start;
+    }
+    
+    .info-item i {
+      font-size: 1.5rem;
+      color: #d4af37;
+      min-width: 30px;
+    }
+    
+    /* Blog Page */
+    .blog-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    
+    .blog-card {
+      background: white;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    
+    .blog-card img {
+      width: 100%;
+      height: 200px;
+      object-fit: cover;
+    }
+    
+    .blog-content {
+      padding: 1.5rem;
+    }
+    
+    .blog-content h3 {
+      margin-bottom: 0.5rem;
+    }
+    
+    .read-more {
+      color: #d4af37;
+      text-decoration: none;
+      font-weight: bold;
+      display: inline-block;
+      margin-top: 1rem;
+    }
+    
+    /* About Page */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 3rem;
+      align-items: center;
+      margin: 3rem 0;
+    }
+    
+    .mission-vision-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    
+    .mv-card {
+      background: white;
+      padding: 3rem;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    }
+    
+    .team-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 2rem;
+      margin: 3rem 0;
+    }
+    
+    .team-member {
+      text-align: center;
+    }
+    
+    .team-member img {
+      width: 200px;
+      height: 200px;
+      border-radius: 50%;
+      object-fit: cover;
+      margin-bottom: 1rem;
+    }
+    
+    /* Responsive */
+    @media (max-width: 768px) {
+      .mobile-toggle {
+        display: block;
+      }
+      
+      .nav-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: #0a1f44;
+        padding: 1rem;
+      }
+      
+      .nav-menu.active {
+        display: block;
+      }
+      
+      .nav-menu ul {
+        flex-direction: column;
+        gap: 1rem;
+      }
+      
+      .hero h1 {
+        font-size: 2rem;
+      }
+      
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .about-grid {
+        grid-template-columns: 1fr;
+      }
+      
+      .mission-vision-grid {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-
-<nav class="navbar">
-  <div class="container">
-    <div class="navbar-inner">
-      <a href="index.html" class="nav-logo">RNS <span>Digital</span></a>
-      <ul class="nav-links">
-        <li><a href="why-us.html">Why Us</a></li>
-        <li><a href="pricing.html" class="active">Pricing</a></li>
-        <li><a href="portfolio.html">Portfolio</a></li>
-        <li><a href="process.html">Process</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="contact.html" class="nav-cta">Get Started</a></li>
-      </ul>
-      <button class="nav-toggle" aria-label="Toggle navigation">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </div>
-</nav>
-
-<section class="page-header">
-  <div class="container">
-    <div class="page-header-inner">
-      <div class="breadcrumb">
-        <a href="index.html">Home</a>
-        <span>/</span>
-        <span>Pricing</span>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header-container">
+      <div class="logo">
+        <h2><span class="gold">Prestige</span> Properties</h2>
       </div>
-      <h1>Simple, Honest Pricing</h1>
-      <p>Two focused plans designed for different stages of business growth. No hidden fees, no fine print surprises.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ── Pricing Cards ────────────────────── -->
-<section class="section" style="background:var(--white);">
-  <div class="container">
-    <div class="pricing-grid">
-
-      <!-- Basic -->
-      <div class="pricing-card">
-        <div class="pricing-name">Basic Plan</div>
-        <div class="pricing-price"><sup>&#8377;</sup>7,999</div>
-        <p class="pricing-desc">One-time payment &bull; Ideal for establishing your online presence</p>
-        <ul class="pricing-features">
-          <li class="pricing-feature">
-            <svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            Up to 5-page professional website
-          </li>
-          <li class="pricing-feature">
-            <svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            Mobile responsive design
-          </li>
-          <li class="pricing-feature">
-            <svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            Contact form + WhatsApp button
-          </li>
-          <li class="pricing-feature">
-            <svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            Google Maps integration
-          </li>
-          <li class="pricing-feature">
-            <svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            Basic on-page SEO setup
-          </li>
-          <li class="pricing-feature">
-            <svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            Domain + 1-year hosting guidance
-          </li>
-          <li class="pricing-feature">
-            <svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            2 rounds of revision
-          </li>
-          <li class="pricing-feature">
-            <svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            14-day post-launch support
-          </li>
+      <nav class="nav-menu" id="nav-menu">
+        <ul>
+          <li><a href="#" onclick="showPage('home')" class="active" id="nav-home">Home</a></li>
+          <li><a href="#" onclick="showPage('about')" id="nav-about">About</a></li>
+          <li><a href="#" onclick="showPage('properties')" id="nav-properties">Properties</a></li>
+          <li><a href="#" onclick="showPage('property-details')" id="nav-property-details">Property Details</a></li>
+          <li><a href="#" onclick="showPage('services')" id="nav-services">Services</a></li>
+          <li><a href="#" onclick="showPage('blog')" id="nav-blog">Blog</a></li>
+          <li><a href="#" onclick="showPage('contact')" id="nav-contact">Contact</a></li>
         </ul>
-        <div class="pricing-note">
-          <strong>From 2nd Year:</strong> Domain renewal approx &#8377;1,000/year (paid directly to registrar — no middleman markup from us)
-        </div>
-        <a href="basic.html" class="btn btn-outline" style="width:100%;justify-content:center;">View Basic Plan Details</a>
-      </div>
-
-      <!-- Growth -->
-      <div class="pricing-card featured">
-        <div class="pricing-badge">Most Recommended</div>
-        <div class="pricing-name">Growth Plan</div>
-        <div class="pricing-price"><sup>&#8377;</sup>14,999</div>
-        <p class="pricing-desc">One-time payment &bull; Built to generate leads &amp; grow your business</p>
-        <ul class="pricing-features">
-          <li class="pricing-feature">
-            <svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            Up to 10-page conversion-focused website
-          </li>
-          <li class="pricing-feature">
-            <svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            Premium mobile-first design
-          </li>
-          <li class="pricing-feature">
-            <svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            Lead capture forms + WhatsApp CTA
-          </li>
-          <li class="pricing-feature">
-            <svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            Google Business Profile setup assistance
-          </li>
-          <li class="pricing-feature">
-            <svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            Advanced on-page SEO (keywords, schema)
-          </li>
-          <li class="pricing-feature">
-            <svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            Google Analytics integration
-          </li>
-          <li class="pricing-feature">
-            <svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            Photo gallery / portfolio section
-          </li>
-          <li class="pricing-feature">
-            <svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            Testimonials &amp; trust section
-          </li>
-          <li class="pricing-feature">
-            <svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            3 rounds of revision
-          </li>
-          <li class="pricing-feature">
-            <svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            30-day post-launch support
-          </li>
-          <li class="pricing-feature">
-            <svg class="check-icon" viewBox="0 0 24 24"><polyline points="20 6 9 17 4 12"/></svg>
-            Domain + 1-year hosting guidance
-          </li>
-        </ul>
-        <div class="pricing-note">
-          <strong>From 2nd Year:</strong> Domain renewal approx &#8377;1,000/year (paid directly to registrar — transparent, no markup)
-        </div>
-        <a href="growth.html" class="btn btn-primary" style="width:100%;justify-content:center;">View Growth Plan Details</a>
-      </div>
-
-    </div>
-
-    <!-- Compare Note -->
-    <div class="text-center mt-40">
-      <p style="font-size:.9rem;max-width:560px;margin:0 auto;">Not sure which plan to choose? <a href="contact.html" style="color:var(--blue);font-weight:600;">Message us on WhatsApp</a> — we'll recommend the right one based on your business type and goals.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ── Monthly Support ─────────────────── -->
-<section class="section-sm" style="background:var(--off-white);">
-  <div class="container">
-    <div class="text-center mb-32">
-      <div class="section-label" style="justify-content:center;">Optional Add-On</div>
-      <h2>Monthly Website Support</h2>
-      <p class="mt-12 max-640">Once your website is live, you can opt into a monthly support plan for ongoing updates, security monitoring, and content changes.</p>
-    </div>
-    <div class="pricing-support-card">
-      <h3 style="margin-bottom:4px;">Monthly Support Plans</h3>
-      <p style="font-size:.875rem;">Choose a plan that fits your maintenance needs.</p>
-      <div class="support-options">
-        <div class="support-option">
-          <div class="badge badge-navy">Essential</div>
-          <div class="support-price">&#8377;499<span style="font-size:.85rem;font-weight:400;color:var(--text-muted);">/mo</span></div>
-          <p>Up to 3 minor content updates per month. WhatsApp support.</p>
-        </div>
-        <div class="support-option" style="border-color:rgba(26,86,219,.3);">
-          <div class="badge badge-blue">Active</div>
-          <div class="support-price">&#8377;999<span style="font-size:.85rem;font-weight:400;color:var(--text-muted);">/mo</span></div>
-          <p>Up to 8 updates, performance monitoring, and priority response.</p>
-        </div>
-      </div>
-      <p style="font-size:.8rem;margin-top:16px;color:var(--text-muted);">Monthly support is entirely optional — your website works perfectly without it. These plans are for businesses that frequently update content or want hands-off maintenance.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ── Domain Clarity ──────────────────── -->
-<section class="section-sm" style="background:var(--white);">
-  <div class="container max-760">
-    <div class="section-label" style="margin-bottom:20px;">Domain &amp; Hosting Clarity</div>
-    <h3 style="margin-bottom:16px;">What Happens After Year One?</h3>
-    <p>Both our plans include assistance setting up your domain and hosting for the first year. From the second year onwards, you'll renew your domain directly with the registrar (like GoDaddy or BigRock) at approximately <strong>&#8377;800 – &#8377;1,200/year</strong> depending on the extension (.in, .com, etc.). Hosting renewals vary by provider — we'll guide you through the options.</p>
-    <p style="margin-top:12px;">We do <strong>not</strong> add any markup on renewals. You pay the registrar directly, and we have no involvement in that transaction.</p>
-    <div class="notice-box mt-24">
-      <svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-      <p><strong>No hidden ongoing fees from RNS Digital.</strong> After project delivery, the only recurring costs you'll have are your domain and hosting renewals — both paid directly to third-party providers at standard market rates.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ── FAQ ─────────────────────────────── -->
-<section class="section" style="background:var(--off-white);">
-  <div class="container max-760">
-    <div class="text-center mb-40">
-      <div class="section-label" style="justify-content:center;">FAQ</div>
-      <h2>Common Pricing Questions</h2>
-    </div>
-    <div class="faq-list">
-      <div class="faq-item">
-        <div class="faq-q">
-          Is the pricing fixed or will there be extra charges?
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </div>
-        <div class="faq-a">The plan price is fixed. The only additional costs would be domain and hosting (which you pay to third-party providers) and any optional monthly support you choose to add. We'll always tell you upfront if your requirement falls outside the plan scope.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">
-          Can I upgrade from Basic to Growth later?
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </div>
-        <div class="faq-a">Yes. If you start with the Basic plan and want to upgrade to Growth, you can do so at any point. You'll pay the difference and we'll add the Growth features to your existing website.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">
-          What payment methods do you accept?
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </div>
-        <div class="faq-a">We accept UPI, bank transfer (NEFT/RTGS/IMPS), and standard payment apps. Typically we take 50% upfront and 50% before the final handover.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">
-          Do you offer any payment in installments?
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </div>
-        <div class="faq-a">Our standard structure is 50% advance + 50% on delivery. For the Growth plan, we can discuss a milestone-based payment schedule during the consultation.</div>
-      </div>
-      <div class="faq-item">
-        <div class="faq-q">
-          What if I need more pages than the plan includes?
-          <svg viewBox="0 0 24 24" fill="none" stroke-width="2"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
-        </div>
-        <div class="faq-a">Additional pages can be added at &#8377;1,500 per page for Basic or &#8377;2,000 per page for Growth. We'll quote this transparently before starting work.</div>
+      </nav>
+      <div class="header-actions">
+        <a href="tel:+919000000000" class="call-btn"><i class="fas fa-phone-alt"></i> 90000 00000</a>
+        <a href="https://wa.me/919000000000" class="whatsapp-header" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <div class="mobile-toggle" id="mobile-toggle"><i class="fas fa-bars"></i></div>
       </div>
     </div>
-  </div>
-</section>
+  </header>
 
-<section class="section cta-section">
-  <div class="container">
-    <div class="cta-inner">
+  <!-- Main Content Area - All Pages -->
+  <main>
+    <!-- Home Page -->
+    <div id="home-page" class="page">
+      <!-- Hero -->
+      <section class="hero" style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1973&q=80') center/cover;">
+        <div class="container hero-content">
+          <h1>Find Your Dream Property <br>in <span class="gold">Coimbatore</span></h1>
+          <p>Luxury villas, apartments, and commercial spaces from Prestige Properties</p>
+          <div class="hero-buttons">
+            <a href="#" onclick="showPage('properties')" class="btn btn-primary">View Properties</a>
+            <a href="#" onclick="showPage('contact')" class="btn btn-outline">Contact Us</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Search -->
+      <section class="search-section">
+        <div class="container">
+          <form class="search-form" onsubmit="event.preventDefault(); showPage('properties')">
+            <input type="text" placeholder="Location (e.g., RS Puram, Gandhipuram)">
+            <select>
+              <option>Property Type</option>
+              <option>Apartment</option>
+              <option>Villa</option>
+              <option>Commercial</option>
+              <option>Land</option>
+            </select>
+            <select>
+              <option>Budget</option>
+              <option>Below ₹30L</option>
+              <option>₹30L - ₹60L</option>
+              <option>₹60L - 1Cr</option>
+              <option>Above 1Cr</option>
+            </select>
+            <button type="submit" class="btn btn-primary"><i class="fas fa-search"></i> Search</button>
+          </form>
+        </div>
+      </section>
+
+      <!-- Featured Properties -->
+      <section class="featured">
+        <div class="container">
+          <h2 class="section-title">Featured <span class="gold">Properties</span></h2>
+          <div class="property-grid">
+            <div class="property-card">
+              <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2075&q=80" alt="Property">
+              <div class="property-info">
+                <span class="price">₹1.2 Cr</span>
+                <h3>Modern Villa in RS Puram</h3>
+                <p><i class="fas fa-map-marker-alt"></i> RS Puram, Coimbatore</p>
+                <div class="property-meta">
+                  <span><i class="fas fa-bed"></i> 4 Beds</span>
+                  <span><i class="fas fa-vector-square"></i> 2850 sqft</span>
+                </div>
+                <a href="#" onclick="showPage('property-details')" class="read-more">View Details →</a>
+              </div>
+            </div>
+            <div class="property-card">
+              <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80" alt="Property">
+              <div class="property-info">
+                <span class="price">₹75 L</span>
+                <h3>3BHK Apartment, Saibaba Colony</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Saibaba Colony</p>
+                <div class="property-meta">
+                  <span><i class="fas fa-bed"></i> 3 Beds</span>
+                  <span><i class="fas fa-vector-square"></i> 1650 sqft</span>
+                </div>
+                <a href="#" onclick="showPage('property-details')" class="read-more">View Details →</a>
+              </div>
+            </div>
+            <div class="property-card">
+              <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=1935&q=80" alt="Property">
+              <div class="property-info">
+                <span class="price">₹2.5 Cr</span>
+                <h3>Commercial Showroom</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Avinashi Road</p>
+                <div class="property-meta">
+                  <span><i class="fas fa-building"></i> 3200 sqft</span>
+                  <span><i class="fas fa-car"></i> Parking</span>
+                </div>
+                <a href="#" onclick="showPage('property-details')" class="read-more">View Details →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- About Preview -->
+      <section style="padding: 4rem 0; background: #f4f4f4;">
+        <div class="container">
+          <div class="about-grid">
+            <div>
+              <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">Trusted Real Estate Partner in Coimbatore</h2>
+              <p style="margin-bottom: 1rem; line-height: 1.8;">Prestige Properties has been helping families find their dream homes since 2010. With deep local knowledge and professional service, we make property transactions seamless.</p>
+              <ul style="list-style: none; margin: 2rem 0;">
+                <li style="margin-bottom: 0.8rem;"><i class="fas fa-check-circle gold"></i> 1000+ happy families</li>
+                <li style="margin-bottom: 0.8rem;"><i class="fas fa-check-circle gold"></i> 500+ properties sold</li>
+                <li style="margin-bottom: 0.8rem;"><i class="fas fa-check-circle gold"></i> Expert local guidance</li>
+              </ul>
+              <a href="#" onclick="showPage('about')" class="btn btn-primary">Know More About Us</a>
+            </div>
+            <div>
+              <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" alt="Team" style="width: 100%; border-radius: 10px;">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Services Preview -->
+      <section style="padding: 4rem 0;">
+        <div class="container">
+          <h2 class="section-title">Our <span class="gold">Services</span></h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+            <div style="background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+              <i class="fas fa-home" style="font-size: 2.5rem; color: #d4af37; margin-bottom: 1rem;"></i>
+              <h3>Property Buying</h3>
+            </div>
+            <div style="background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+              <i class="fas fa-hand-holding-usd" style="font-size: 2.5rem; color: #d4af37; margin-bottom: 1rem;"></i>
+              <h3>Property Selling</h3>
+            </div>
+            <div style="background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+              <i class="fas fa-key" style="font-size: 2.5rem; color: #d4af37; margin-bottom: 1rem;"></i>
+              <h3>Rental Management</h3>
+            </div>
+            <div style="background: white; padding: 2rem; border-radius: 10px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+              <i class="fas fa-chart-line" style="font-size: 2.5rem; color: #d4af37; margin-bottom: 1rem;"></i>
+              <h3>Consultation</h3>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- About Page -->
+    <div id="about-page" class="page" style="display: none;">
+      <section class="page-header" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1973&q=80') center/cover;">
+        <div class="container">
+          <h1>About <span class="gold">Prestige Properties</span></h1>
+        </div>
+      </section>
+
+      <section style="padding: 4rem 0;">
+        <div class="container">
+          <div class="about-grid">
+            <div>
+              <h2 style="font-size: 2rem; margin-bottom: 1.5rem;">Our Journey in Coimbatore Real Estate</h2>
+              <p style="margin-bottom: 1rem; line-height: 1.8;">Founded in 2010, Prestige Properties has helped over 1000 families find their dream homes in Coimbatore. We combine local expertise with professional service.</p>
+              <p style="line-height: 1.8;">Our team of experienced agents knows every neighborhood - from the bustling RS Puram to peaceful residential areas in Saibaba Colony. We pride ourselves on transparency, integrity, and customer satisfaction.</p>
+            </div>
+            <div>
+              <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-4.0.3&auto=format&fit=crop&w=2069&q=80" alt="Team" style="width: 100%; border-radius: 10px;">
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style="background: #f4f4f4; padding: 4rem 0;">
+        <div class="container">
+          <div class="mission-vision-grid">
+            <div class="mv-card">
+              <i class="fas fa-bullseye" style="color: #d4af37; font-size: 3rem; margin-bottom: 1rem;"></i>
+              <h3 style="margin-bottom: 1rem;">Our Mission</h3>
+              <p>To provide transparent, honest real estate services and help every client find the perfect property in Coimbatore.</p>
+            </div>
+            <div class="mv-card">
+              <i class="fas fa-eye" style="color: #d4af37; font-size: 3rem; margin-bottom: 1rem;"></i>
+              <h3 style="margin-bottom: 1rem;">Our Vision</h3>
+              <p>To be the most trusted real estate brand in Tamil Nadu, known for integrity and excellence.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style="padding: 4rem 0;">
+        <div class="container">
+          <h2 class="section-title">Meet Our <span class="gold">Team</span></h2>
+          <div class="team-grid">
+            <div class="team-member">
+              <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Team">
+              <h3>Karthik R</h3>
+              <p style="color: #d4af37;">Founder & CEO</p>
+            </div>
+            <div class="team-member">
+              <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="Team">
+              <h3>Priya S</h3>
+              <p style="color: #d4af37;">Senior Agent</p>
+            </div>
+            <div class="team-member">
+              <img src="https://randomuser.me/api/portraits/men/75.jpg" alt="Team">
+              <h3>Vikram M</h3>
+              <p style="color: #d4af37;">Property Consultant</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section style="background: #0a1f44; color: white; padding: 3rem 0; text-align: center;">
+        <div class="container">
+          <h2 style="margin-bottom: 1rem;">Why Choose Prestige Properties?</h2>
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; margin-top: 2rem;">
+            <div><i class="fas fa-check-circle gold"></i> 15+ Years Experience</div>
+            <div><i class="fas fa-check-circle gold"></i> 1000+ Happy Clients</div>
+            <div><i class="fas fa-check-circle gold"></i> Best Price Guarantee</div>
+            <div><i class="fas fa-check-circle gold"></i> Legal Assistance</div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Properties Page -->
+    <div id="properties-page" class="page" style="display: none;">
+      <section class="page-header" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1973&q=80') center/cover;">
+        <div class="container">
+          <h1>Our <span class="gold">Properties</span></h1>
+        </div>
+      </section>
+
+      <section style="padding: 4rem 0;">
+        <div class="container">
+          <div style="display: flex; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap;">
+            <select style="padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px; min-width: 200px;">
+              <option>All Locations</option>
+              <option>RS Puram</option>
+              <option>Saibaba Colony</option>
+              <option>Gandhipuram</option>
+              <option>Peelamedu</option>
+            </select>
+            <select style="padding: 0.8rem; border: 1px solid #ddd; border-radius: 5px; min-width: 200px;">
+              <option>All Types</option>
+              <option>Apartment</option>
+              <option>Villa</option>
+              <option>Commercial</option>
+              <option>Land</option>
+            </select>
+            <button class="btn btn-primary" onclick="alert('Filter applied!')">Filter</button>
+          </div>
+          <div class="property-grid">
+            <!-- Property cards (6 total) -->
+            <div class="property-card">
+              <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2075&q=80" alt="Property">
+              <div class="property-info">
+                <span class="price">₹1.2 Cr</span>
+                <h3>Modern Villa in RS Puram</h3>
+                <p><i class="fas fa-map-marker-alt"></i> RS Puram</p>
+                <div class="property-meta">
+                  <span><i class="fas fa-bed"></i> 4 Beds</span>
+                  <span><i class="fas fa-vector-square"></i> 2850 sqft</span>
+                </div>
+                <a href="#" onclick="showPage('property-details')" class="read-more">View Details →</a>
+              </div>
+            </div>
+            <div class="property-card">
+              <img src="https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&auto=format&fit=crop&w=1974&q=80" alt="Property">
+              <div class="property-info">
+                <span class="price">₹75 L</span>
+                <h3>3BHK Apartment</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Saibaba Colony</p>
+                <div class="property-meta">
+                  <span><i class="fas fa-bed"></i> 3 Beds</span>
+                  <span><i class="fas fa-vector-square"></i> 1650 sqft</span>
+                </div>
+                <a href="#" onclick="showPage('property-details')" class="read-more">View Details →</a>
+              </div>
+            </div>
+            <div class="property-card">
+              <img src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?ixlib=rb-4.0.3&auto=format&fit=crop&w=1935&q=80" alt="Property">
+              <div class="property-info">
+                <span class="price">₹2.5 Cr</span>
+                <h3>Commercial Showroom</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Avinashi Road</p>
+                <div class="property-meta">
+                  <span><i class="fas fa-building"></i> 3200 sqft</span>
+                  <span><i class="fas fa-car"></i> Parking</span>
+                </div>
+                <a href="#" onclick="showPage('property-details')" class="read-more">View Details →</a>
+              </div>
+            </div>
+            <div class="property-card">
+              <img src="https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Property">
+              <div class="property-info">
+                <span class="price">₹85 L</span>
+                <h3>2BHK Apartment</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Peelamedu</p>
+                <div class="property-meta">
+                  <span><i class="fas fa-bed"></i> 2 Beds</span>
+                  <span><i class="fas fa-vector-square"></i> 1250 sqft</span>
+                </div>
+                <a href="#" onclick="showPage('property-details')" class="read-more">View Details →</a>
+              </div>
+            </div>
+            <div class="property-card">
+              <img src="https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?ixlib=rb-4.0.3&auto=format&fit=crop&w=1984&q=80" alt="Property">
+              <div class="property-info">
+                <span class="price">₹1.5 Cr</span>
+                <h3>Luxury Villa</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Race Course</p>
+                <div class="property-meta">
+                  <span><i class="fas fa-bed"></i> 4 Beds</span>
+                  <span><i class="fas fa-vector-square"></i> 3200 sqft</span>
+                </div>
+                <a href="#" onclick="showPage('property-details')" class="read-more">View Details →</a>
+              </div>
+            </div>
+            <div class="property-card">
+              <img src="https://images.unsplash.com/photo-1493809842364-78817add7ffb?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Property">
+              <div class="property-info">
+                <span class="price">₹95 L</span>
+                <h3>3BHK with Terrace</h3>
+                <p><i class="fas fa-map-marker-alt"></i> Singanallur</p>
+                <div class="property-meta">
+                  <span><i class="fas fa-bed"></i> 3 Beds</span>
+                  <span><i class="fas fa-vector-square"></i> 1850 sqft</span>
+                </div>
+                <a href="#" onclick="showPage('property-details')" class="read-more">View Details →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Property Details Page -->
+    <div id="property-details-page" class="page" style="display: none;">
+      <section class="page-header" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2075&q=80') center/cover;">
+        <div class="container">
+          <h1>Property <span class="gold">Details</span></h1>
+        </div>
+      </section>
+
+      <section style="padding: 4rem 0;">
+        <div class="container">
+          <div style="display: grid; grid-template-columns: 2fr 1fr; gap: 3rem;">
+            <div>
+              <img src="https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?ixlib=rb-4.0.3&auto=format&fit=crop&w=2075&q=80" alt="Property" style="width: 100%; border-radius: 10px; margin-bottom: 2rem;">
+              <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 2rem;">
+                <img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Gallery" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px;">
+                <img src="https://images.unsplash.com/photo-1600573472591-ee6b68d14c68?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Gallery" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px;">
+                <img src="https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Gallery" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px;">
+                <img src="https://images.unsplash.com/photo-1600585154526-990dced4db0d?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Gallery" style="width: 100%; height: 100px; object-fit: cover; border-radius: 5px;">
+              </div>
+              
+              <h2 style="font-size: 2rem; margin-bottom: 1rem;">Modern Villa in RS Puram</h2>
+              <p style="color: #d4af37; font-size: 1.5rem; margin-bottom: 1rem;">₹1.2 Cr</p>
+              <p style="margin-bottom: 2rem; line-height: 1.8;">This stunning modern villa is located in the heart of RS Puram, Coimbatore's most sought-after neighborhood. Features include spacious rooms, modern finishes, and a beautiful garden.</p>
+              
+              <h3 style="margin-bottom: 1rem;">Amenities</h3>
+              <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 1rem; margin-bottom: 2rem;">
+                <span><i class="fas fa-check-circle gold"></i> 4 Bedrooms</span>
+                <span><i class="fas fa-check-circle gold"></i> 5 Bathrooms</span>
+                <span><i class="fas fa-check-circle gold"></i> Modern Kitchen</span>
+                <span><i class="fas fa-check-circle gold"></i> 2 Car Parking</span>
+                <span><i class="fas fa-check-circle gold"></i> Garden</span>
+                <span><i class="fas fa-check-circle gold"></i> 24/7 Security</span>
+                <span><i class="fas fa-check-circle gold"></i> Swimming Pool</span>
+                <span><i class="fas fa-check-circle gold"></i> Gym</span>
+              </div>
+              
+              <h3 style="margin-bottom: 1rem;">Location</h3>
+              <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.293117771022!2d76.955824!3d11.016844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859af2f971cb5%3A0x2fc1c81d1837c2f!2sCoimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" width="100%" height="300" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+            </div>
+            
+            <div>
+              <div style="background: #f4f4f4; padding: 2rem; border-radius: 10px; position: sticky; top: 100px;">
+                <h3 style="margin-bottom: 1.5rem;">Contact Agent</h3>
+                <form onsubmit="event.preventDefault(); alert('Thank you! Agent will contact you soon.');">
+                  <input type="text" placeholder="Your Name" style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 5px;" required>
+                  <input type="email" placeholder="Your Email" style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 5px;" required>
+                  <input type="tel" placeholder="Phone Number" style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 5px;" required>
+                  <textarea placeholder="Message" rows="4" style="width: 100%; padding: 0.8rem; margin-bottom: 1rem; border: 1px solid #ddd; border-radius: 5px;">I'm interested in this property</textarea>
+                  <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                </form>
+                <div style="margin-top: 1.5rem; text-align: center;">
+                  <p><i class="fas fa-phone gold"></i> <a href="tel:+919000000000">+91 90000 00000</a></p>
+                  <p><i class="fab fa-whatsapp gold"></i> <a href="https://wa.me/919000000000" target="_blank">WhatsApp</a></p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Services Page -->
+    <div id="services-page" class="page" style="display: none;">
+      <section class="page-header" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1973&q=80') center/cover;">
+        <div class="container">
+          <h1>Our <span class="gold">Services</span></h1>
+        </div>
+      </section>
+
+      <section style="padding: 4rem 0;">
+        <div class="container">
+          <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+            <div style="background: white; padding: 3rem 2rem; border-radius: 10px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+              <i class="fas fa-home" style="font-size: 3rem; color: #d4af37; margin-bottom: 1rem;"></i>
+              <h3 style="margin-bottom: 1rem;">Property Buying</h3>
+              <p>Find your dream home with our expert assistance and local market knowledge. We help you navigate the entire buying process.</p>
+            </div>
+            <div style="background: white; padding: 3rem 2rem; border-radius: 10px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+              <i class="fas fa-hand-holding-usd" style="font-size: 3rem; color: #d4af37; margin-bottom: 1rem;"></i>
+              <h3 style="margin-bottom: 1rem;">Property Selling</h3>
+              <p>Get the best value for your property with our marketing strategies and negotiation skills. We ensure a quick and profitable sale.</p>
+            </div>
+            <div style="background: white; padding: 3rem 2rem; border-radius: 10px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+              <i class="fas fa-key" style="font-size: 3rem; color: #d4af37; margin-bottom: 1rem;"></i>
+              <h3 style="margin-bottom: 1rem;">Rental Management</h3>
+              <p>Hassle-free rental solutions for landlords and tenants. We handle everything from tenant screening to maintenance.</p>
+            </div>
+            <div style="background: white; padding: 3rem 2rem; border-radius: 10px; text-align: center; box-shadow: 0 3px 10px rgba(0,0,0,0.1);">
+              <i class="fas fa-chart-line" style="font-size: 3rem; color: #d4af37; margin-bottom: 1rem;"></i>
+              <h3 style="margin-bottom: 1rem;">Property Consultation</h3>
+              <p>Expert advice on property investment and market trends. We help you make informed decisions for maximum returns.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Blog Page -->
+    <div id="blog-page" class="page" style="display: none;">
+      <section class="page-header" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1973&q=80') center/cover;">
+        <div class="container">
+          <h1>Our <span class="gold">Blog</span></h1>
+        </div>
+      </section>
+
+      <section style="padding: 4rem 0;">
+        <div class="container">
+          <div class="blog-grid">
+            <div class="blog-card">
+              <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1973&q=80" alt="Blog">
+              <div class="blog-content">
+                <h3>Tips for First-Time Home Buyers in Coimbatore</h3>
+                <p style="margin: 1rem 0;">Essential guide for purchasing your first property in the city. Learn about legal checks, budget planning, and more.</p>
+                <a href="#" class="read-more" onclick="alert('Blog post coming soon!')">Read More →</a>
+              </div>
+            </div>
+            <div class="blog-card">
+              <img src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?ixlib=rb-4.0.3&auto=format&fit=crop&w=2073&q=80" alt="Blog">
+              <div class="blog-content">
+                <h3>Real Estate Investment Trends 2025</h3>
+                <p style="margin: 1rem 0;">Latest market trends and investment opportunities in Coimbatore's growing real estate sector.</p>
+                <a href="#" class="read-more" onclick="alert('Blog post coming soon!')">Read More →</a>
+              </div>
+            </div>
+            <div class="blog-card">
+              <img src="https://images.unsplash.com/photo-1568605114967-8130f3a36994?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80" alt="Blog">
+              <div class="blog-content">
+                <h3>Best Residential Areas in Coimbatore</h3>
+                <p style="margin: 1rem 0;">Guide to the most livable neighborhoods in the city. Find out which area suits your lifestyle and budget.</p>
+                <a href="#" class="read-more" onclick="alert('Blog post coming soon!')">Read More →</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Contact Page -->
+    <div id="contact-page" class="page" style="display: none;">
+      <section class="page-header" style="background: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url('https://images.unsplash.com/photo-1560518883-ce09059eeffa?ixlib=rb-4.0.3&auto=format&fit=crop&w=1973&q=80') center/cover;">
+        <div class="container">
+          <h1>Contact <span class="gold">Prestige Properties</span></h1>
+        </div>
+      </section>
+
+      <section style="padding: 4rem 0;">
+        <div class="container">
+          <div class="contact-grid">
+            <div class="contact-form">
+              <h3 style="margin-bottom: 2rem;">Send us a Message</h3>
+              <form onsubmit="event.preventDefault(); alert('Thank you! We will contact you soon.');">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <input type="text" placeholder="Subject">
+                <textarea rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn btn-primary">Send Message</button>
+              </form>
+            </div>
+            
+            <div class="contact-info">
+              <h3 style="margin-bottom: 2rem;">Get in Touch</h3>
+              <div class="info-item">
+                <i class="fas fa-map-marker-alt"></i>
+                <div>
+                  <h4>Office Address</h4>
+                  <p>45, Cross Cut Road, RS Puram, Coimbatore - 641002</p>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-phone"></i>
+                <div>
+                  <h4>Phone Number</h4>
+                  <p><a href="tel:+919000000000">+91 90000 00000</a></p>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="fas fa-envelope"></i>
+                <div>
+                  <h4>Email Address</h4>
+                  <p><a href="mailto:info@prestigeproperties.com">info@prestigeproperties.com</a></p>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="fab fa-whatsapp"></i>
+                <div>
+                  <h4>WhatsApp</h4>
+                  <p><a href="https://wa.me/919000000000" target="_blank">+91 90000 00000</a></p>
+                </div>
+              </div>
+              <div class="info-item">
+                <i class="far fa-clock"></i>
+                <div>
+                  <h4>Business Hours</h4>
+                  <p>Monday - Saturday: 9:30 AM - 7:00 PM<br>Sunday: Closed</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          <div style="margin-top: 3rem;">
+            <h3 style="margin-bottom: 1rem;">Our Location</h3>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3916.293117771022!2d76.955824!3d11.016844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3ba859af2f971cb5%3A0x2fc1c81d1837c2f!2sCoimbatore%2C%20Tamil%20Nadu!5e0!3m2!1sen!2sin!4v1620000000000!5m2!1sen!2sin" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+          </div>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-grid">
       <div>
-        <h2 style="color:var(--white);">Still Have Questions About Pricing?</h2>
-        <p style="color:rgba(255,255,255,.6);margin-top:8px;">Reach out directly — we'll give you a clear, honest answer.</p>
+        <h3>Prestige Properties</h3>
+        <p>Your trusted real estate partner in Coimbatore since 2010.</p>
+        <p><i class="fas fa-map-marker-alt"></i> 45, Cross Cut Road, RS Puram, Coimbatore - 641002</p>
+        <p><i class="fas fa-phone"></i> <a href="tel:+919000000000">+91 90000 00000</a></p>
+        <p><i class="fas fa-envelope"></i> info@prestigeproperties.com</p>
+        <div class="social">
+          <a href="#"><i class="fab fa-facebook"></i></a>
+          <a href="#"><i class="fab fa-instagram"></i></a>
+          <a href="#"><i class="fab fa-whatsapp"></i></a>
+        </div>
       </div>
-      <div class="cta-actions">
-        <a href="contact.html" class="btn btn-primary btn-lg">Talk to Us</a>
-        <a href="https://wa.me/917550268805" class="btn btn-white btn-lg" target="_blank">WhatsApp Us</a>
+      <div>
+        <h4>Quick Links</h4>
+        <ul style="list-style: none;">
+          <li style="margin-bottom: 0.5rem;"><a href="#" onclick="showPage('home')">Home</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="#" onclick="showPage('about')">About Us</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="#" onclick="showPage('properties')">Properties</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="#" onclick="showPage('services')">Services</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="#" onclick="showPage('blog')">Blog</a></li>
+          <li style="margin-bottom: 0.5rem;"><a href="#" onclick="showPage('contact')">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>Popular Locations</h4>
+        <ul style="list-style: none;">
+          <li>RS Puram</li>
+          <li>Saibaba Colony</li>
+          <li>Gandhipuram</li>
+          <li>Peelamedu</li>
+          <li>Singanallur</li>
+        </ul>
       </div>
     </div>
+    <div class="copyright">
+      <p>© 2025 Prestige Properties. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <!-- Floating Buttons -->
+  <div class="floating-buttons">
+    <a href="https://wa.me/919000000000" class="float-wa" target="_blank"><i class="fab fa-whatsapp"></i></a>
+    <a href="tel:+919000000000" class="float-call"><i class="fas fa-phone-alt"></i></a>
   </div>
-</section>
 
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <a href="index.html" class="nav-logo" style="font-size:1.2rem;">RNS <span>Digital</span></a>
-        <p>Professional website design and digital growth services for local businesses across India.</p>
-      </div>
-      <div class="footer-col"><h5>Services</h5><ul><li><a href="basic.html">Basic Website</a></li><li><a href="growth.html">Growth Plan</a></li><li><a href="pricing.html">Pricing</a></li></ul></div>
-      <div class="footer-col"><h5>Company</h5><ul><li><a href="why-us.html">Why Us</a></li><li><a href="portfolio.html">Portfolio</a></li><li><a href="process.html">Our Process</a></li></ul></div>
-      <div class="footer-col"><h5>Contact</h5><ul><li><a href="contact.html">Get in Touch</a></li><li><a href="https://wa.me/919XXXXXXXXX" target="_blank">WhatsApp Us</a></li><li><a href="mailto:hello@rnsdigital.in">hello@rnsdigital.in</a></li></ul></div>
-    </div>
-    <div class="footer-bottom">
-      <span>&copy; 2026 RNS Digital.🩶 All rights reserved.</span>
-      <span>Built for Local Business Growth in India</span>
-    </div>
-  </div>
-</footer>
-
-<a href="https://wa.me/917550268805?text=Hi%2C%20I%27m%20interested%20in%20a%20website%20for%20my%20business." class="whatsapp-float" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-  <span class="whatsapp-tooltip">Chat on WhatsApp</span>
-  <svg viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/></svg>
-</a>
-
-<script src="js/script.js"></script>
-<script>
-  document.querySelectorAll('.faq-item').forEach(item => {
-    item.querySelector('.faq-q').addEventListener('click', () => {
-      item.classList.toggle('open');
+  <script>
+    // Mobile menu toggle
+    document.getElementById('mobile-toggle').addEventListener('click', function() {
+      document.getElementById('nav-menu').classList.toggle('active');
     });
-  });
-</script>
+
+    // Page navigation function
+    function showPage(pageName) {
+      // Hide all pages
+      var pages = document.querySelectorAll('.page');
+      for(var i = 0; i < pages.length; i++) {
+        pages[i].style.display = 'none';
+      }
+      
+      // Show selected page
+      document.getElementById(pageName + '-page').style.display = 'block';
+      
+      // Update active nav
+      var navLinks = document.querySelectorAll('.nav-menu a');
+      for(var i = 0; i < navLinks.length; i++) {
+        navLinks[i].classList.remove('active');
+      }
+      document.getElementById('nav-' + pageName).classList.add('active');
+      
+      // Close mobile menu
+      document.getElementById('nav-menu').classList.remove('active');
+      
+      // Scroll to top
+      window.scrollTo(0, 0);
+    }
+
+    // Set home as default when page loads
+    window.onload = function() {
+      showPage('home');
+    };
+  </script>
 </body>
 </html>
